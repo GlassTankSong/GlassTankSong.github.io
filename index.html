@@ -2,47 +2,153 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>布鲁克档案馆 | 艾登的魔法世界</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鲨啦啦啦的文字宇宙</title>
     <style>
+        /* 明亮温暖的配色 */
+        :root {
+            --bg-color: #fcfaf8; /* 温暖的米白背景 */
+            --text-main: #2d3748; /* 深灰主色调 */
+            --text-sub: #718096; /* 浅灰副标题 */
+            --card-bg: #ffffff;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
         body {
-            background-color: #0f1115;
-            color: #e2e8f0;
-            font-family: 'Segoe UI', Tahoma, sans-serif;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .header {
+            text-align: center;
+            padding: 80px 20px 40px 20px;
+            max-width: 800px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: var(--text-main);
+            letter-spacing: 2px;
+        }
+
+        p.subtitle {
+            font-size: 1.2rem;
+            color: var(--text-sub);
+            line-height: 1.6;
+        }
+
+        /* 卡片网格布局 */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            width: 100%;
+            max-width: 1000px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            padding: 40px 30px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-main);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #edf2f7;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
-            margin: 0;
-            text-align: center;
         }
-        h1 { color: #fbbf24; font-size: 3rem; margin-bottom: 10px; text-shadow: 0 0 20px rgba(251,191,36,0.3); }
-        p { color: #94a3b8; font-size: 1.2rem; max-width: 600px; line-height: 1.6; margin-bottom: 40px; }
-        .links { display: flex; gap: 20px; }
-        a {
-            color: #7c3aed;
-            text-decoration: none;
-            font-size: 1.1rem;
-            padding: 15px 30px;
-            border: 2px solid #7c3aed;
-            border-radius: 8px;
-            transition: all 0.3s;
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .card-title {
+            font-size: 1.4rem;
             font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--text-main);
         }
-        a:hover {
-            background-color: #7c3aed;
-            color: #fff;
-            box-shadow: 0 0 20px rgba(124, 58, 237, 0.6);
+
+        .card-desc {
+            font-size: 0.95rem;
+            color: var(--text-sub);
+        }
+
+        /* 每个卡片专属的顶部点缀色 */
+        .card.onepiece { border-top: 6px solid #e53e3e; } /* 海贼王：红 */
+        .card.rps { border-top: 6px solid #ed64a6; } /* 真人CP：粉 */
+        .card.drarry { border-top: 6px solid #4299e1; } /* 德哈：蓝 */
+        .card.magic { border-top: 6px solid #ecc94b; } /* 魔法觉醒：黄 */
+
+        footer {
+            margin-top: auto;
+            padding: 40px;
+            color: var(--text-sub);
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
-    <h1>布鲁克档案馆</h1>
-    <p>欢迎来到《魔法觉醒》同人世界。这里封存着艾登的过往，以及那些关于魔法与科学的交汇轨迹。</p>
-    
-    <div class="links">
-        <a href="#">📖 小说正文（建设中）</a>
-        <a href="#">✨ 时间线设定（建设中）</a>
+
+    <div class="header">
+        <h1>鲨啦啦啦的文字宇宙</h1>
+        <p class="subtitle">这里存放着鲨啦啦啦写的一些乱七八糟但充满热爱的故事。<br>欢迎来到我的自留地，祝你阅读愉快。</p>
     </div>
+
+    <div class="grid-container">
+        <!-- 卡片 1 -->
+        <a href="#" class="card onepiece">
+            <div class="card-icon">🏴‍☠️</div>
+            <div class="card-title">海贼王</div>
+            <div class="card-desc">大海上最自由的人，与未完的冒险。</div>
+        </a>
+
+        <!-- 卡片 2 -->
+        <a href="#" class="card rps">
+            <div class="card-icon">🌟</div>
+            <div class="card-title">真人CP</div>
+            <div class="card-desc">平行时空的相遇，现实交织的浪漫。</div>
+        </a>
+
+        <!-- 卡片 3 -->
+        <a href="#" class="card drarry">
+            <div class="card-icon">⚡</div>
+            <div class="card-title">德哈 (Drarry)</div>
+            <div class="card-desc">斯莱特林与格兰芬多的宿命纠缠。</div>
+        </a>
+
+        <!-- 卡片 4 -->
+        <a href="#" class="card magic">
+            <div class="card-icon">🪄</div>
+            <div class="card-title">魔法觉醒</div>
+            <div class="card-desc">艾登的过往，与科学交汇的魔法轨迹。</div>
+        </a>
+    </div>
+
+    <footer>
+        © 2026 鲨啦啦啦. Powered by GitHub Pages.
+    </footer>
+
 </body>
 </html>
