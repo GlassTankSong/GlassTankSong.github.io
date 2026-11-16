@@ -3,20 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>鲨啦啦啦的文字宇宙</title>
+    <title>鲨啦啦啦的自留地</title>
+    
+    <!-- 引入思源黑体和思源宋体 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
         /* 明亮温暖的配色 */
         :root {
             --bg-color: #fcfaf8; /* 温暖的米白背景 */
             --text-main: #2d3748; /* 深灰主色调 */
             --text-sub: #718096; /* 浅灰副标题 */
+            --text-welcome: #4a5568; /* 欢迎语的深色 */
             --card-bg: #ffffff;
             --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
             --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
 
         body {
-            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            /* 全局默认字体 */
+            font-family: 'Noto Sans SC', sans-serif; 
             background-color: var(--bg-color);
             color: var(--text-main);
             margin: 0;
@@ -33,17 +41,32 @@
             max-width: 800px;
         }
 
+        /* 大标题：思源黑体，加粗，醒目 */
         h1 {
-            font-size: 3rem;
-            margin-bottom: 15px;
+            font-family: 'Noto Sans SC', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 25px;
             color: var(--text-main);
+            font-weight: 700;
             letter-spacing: 2px;
         }
 
-        p.subtitle {
-            font-size: 1.2rem;
+        /* 第一句（割腿肉介绍）：思源黑体，偏小，灰色 */
+        p.intro {
+            font-family: 'Noto Sans SC', sans-serif;
+            font-size: 1.1rem;
             color: var(--text-sub);
-            line-height: 1.6;
+            margin-bottom: 15px; /* 和下面那句拉开距离 */
+        }
+
+        /* 第二句（欢迎语）：思源宋体，字号更大，颜色更深，带点文学感 */
+        p.welcome {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.3rem;
+            color: var(--text-welcome);
+            line-height: 1.8;
+            font-weight: 400;
+            margin-top: 0;
         }
 
         /* 卡片网格布局 */
@@ -93,13 +116,14 @@
         .card-desc {
             font-size: 0.95rem;
             color: var(--text-sub);
+            line-height: 1.5;
         }
 
         /* 每个卡片专属的顶部点缀色 */
-        .card.onepiece { border-top: 6px solid #e53e3e; } /* 海贼王：红 */
-        .card.rps { border-top: 6px solid #ed64a6; } /* 真人CP：粉 */
-        .card.drarry { border-top: 6px solid #4299e1; } /* 德哈：蓝 */
-        .card.magic { border-top: 6px solid #ecc94b; } /* 魔法觉醒：黄 */
+        .card.onepiece { border-top: 6px solid #e53e3e; } 
+        .card.rps { border-top: 6px solid #ed64a6; } 
+        .card.drarry { border-top: 6px solid #4299e1; } 
+        .card.magic { border-top: 6px solid #ecc94b; } 
 
         footer {
             margin-top: auto;
@@ -112,8 +136,14 @@
 <body>
 
     <div class="header">
-        <h1>鲨啦啦啦的文字宇宙</h1>
-        <p class="subtitle">这里存放着鲨啦啦啦写的一些乱七八糟的割腿肉。<br>欢迎来到我的自留地，可能文笔雷霆，但是既然千山万水赶了过来，也祝你阅读愉快。</p>
+        <!-- 改成了惊喜的问候 -->
+        <h1>哇，你真的来啦！！！</h1>
+        
+        <!-- 第一句：用了 intro 类，黑体，偏小 -->
+        <p class="intro">这里存放着鲨啦啦啦写的一些乱七八糟的割腿肉。</p>
+        
+        <!-- 第二句：用了 welcome 类，宋体，略大，颜色深 -->
+        <p class="welcome">欢迎来到我的自留地，可能文笔雷霆，但是既然千山万水赶了过来，也祝你阅读愉快。</p>
     </div>
 
     <div class="grid-container">
@@ -134,8 +164,8 @@
         <!-- 卡片 3 -->
         <a href="#" class="card drarry">
             <div class="card-icon">⚡</div>
-            <div class="card-title">哈利波特 </div>
-            <div class="card-desc">基本上就是德哈，拜托，宿敌简直就是妻子吧……（没有说光头没鼻子怪的意思）</div>
+            <div class="card-title">哈利波特</div>
+            <div class="card-desc">基本上就是德哈，拜托，宿敌简直就是妻子吧......（没有说光头没鼻子怪的意思）</div>
         </a>
 
         <!-- 卡片 4 -->
